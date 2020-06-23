@@ -10,16 +10,13 @@ flowCore = importr("flowCore")
 flowCut = importr("flowCut")
 
 #takes FlowCal.io.FCSData input from user
-print("Enter FlowCal.io.FCSData")
-flowCalioFCSDataINPUT = input()
-
+flowCalioFCSData = flowCore.flowFrame('''INSERT FILEPATH HERE''')
 
 #takes figures path from user
-print("Enter figures_save_path")
-figuressavepath = input()
+figuressavepath = '''INSERT FILEPATH HERE'''
 
 
-flowCalfcsdata = FlowCal.io.FCSData(flowCalioFCSDataINPUT)
-flowCalflowcutdata = flowCut(flowCalfcsdata, MaxPercCut=0.5, UseOnlyWorstChannels=True, figuresavepath)
+flowCalfcsdata = FlowCal.io.FCSData(flowCalioFCSData)
+flowCalflowcutdata = flowCut(flowCalfcsdata, MaxPercCut=0.5, UseOnlyWorstChannels=True, figuressavepath)
 
 
